@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<div>
+			<div class="nav-bar">
+				<ul class="nav-list">
+					<li>
+						<a href="let_const.html" class="topic-link"> Let, Const</a>
+					</li>
+					<li>
+						<a href="arrow_functions.html" class="topic-link"> Arrow Functions</a>
+					</li>
+					<li>
+						<a href="classes.html" class="topic-link"> Classes and Literals</a>
+					</li>
+					<li>
+						<a href="modules.html" class="topic-link"> Modules</a>
+					</li>
+					<li>
+						<a href="destructuring.html" class="topic-link"> Destructuring</a>
+					</li>
+					<li>
+						<a href="template_strings.html" class="topic-link"> Template Strings</a>
+					</li>
+					<li>
+						<a href="rest_parameters.html" class="topic-link"> Rest Parameters</a>
+					</li>
+					<li>
+						<a href="maps.html" class="topic-link"> Maps</a>
+					</li>
+					<li>
+						<a href="sets.html" class="topic-link"> Sets</a>
+					</li>
+					<li>
+						<a href="tooling.html" class="topic-link"> Tooling</a>
+					</li>
+					<li>
+						<a href="proxies.html" class="topic-link"> Proxies</a>
+					</li>
+					<li>
+						<a href="generator.html" class="topic-link"> Generator</a>
+					</li>
+					<li>
+						<a href="utility.html" class="topic-link"> Utility</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subject-container">
+				<div class="title">
+					<h1>Let Const</h1>
+				</div>
+				<!--  ############################################################## -->
+				<div class="heading">
+					<h1>PROBLEM WITH VAR</h1>
+				</div>
+				<div class="code-snippet">
+					<div class="code-box">
+						<p><span>function areTheyAwesome (name) {</span></p>
+						<p><span>&nbsp; &nbsp;if (name === 'nico') {</span></p>
+						<p><span>&nbsp; &nbsp; &nbsp; &nbsp;var awesome = true</span></p>
+						<p><span>&nbsp; &nbsp;} </span></p>
+						<p><span>&nbsp; return awesome </span></p>
+						<p><span>}</span></p>
+					</div>
+					<div class="response-box">
+						<p>areTheyAwesome('nico')<br /> // &lt;- true<br /> areTheyAwesome('christian heilmann')<br /> // &lt;- undefined</p>
+						<p>&nbsp;</p>
+					</div>
+				</div>
+				<div class="notes">
+					<p>function areTheyAwesome (name) {</p>
+					<p>&nbsp; var awesome if (name === 'nico') {</p>
+					<p>&nbsp; &nbsp; awesome = true</p>
+					<p>&nbsp; }</p>
+					<p>&nbsp; return awesome</p>
+					<p>}</p>
+				</div>
+				<!--  ############################################################## -->
+				<div class="heading">
+					<h1>LEXICAL SCOPE - THE SOLUTION</h1>
+				</div>
+				<div class="sub-heading">
+					<h2>LET</h2>
+				</div>
+				<div class="notes">
+					<p>let outer = 'I am so eccentric!'</p>
+					<p>{</p>
+					<p>&nbsp; let inner = 'I play with neighbors in my block and the sewers'</p>
+					<p>&nbsp; {</p>
+					<p>&nbsp; &nbsp; let innermost = 'I only play with neighbors in my block'</p>
+					<p>&nbsp; }</p>
+					<p>&nbsp; // accessing innermost here would throw</p>
+					<p>}</p>
+					<p>// accessing inner here would throw</p>
+					<p>// accessing innermost here would throw</p>
+				</div>
+				<div class="sub-heading">
+					<h2>CONST</h2>
+				</div>
+				<div class="notes">
+					<ul>
+						<li>const is also block-scoped</li>
+						<li>const variables must be declared using an initializer</li>
+						<li>const variables can only be assigned to once, in said initializer</li>
+						<li>const variables don’t make the assigned value immutable.</li>
+						<li>Assigning to const will fail silently</li>
+						<li>Redeclaration of a variable by the same name will throw</li>
+					</ul>
+				</div>
+				<!--  ############################################################## -->
+			</div>
+		</div>
+	</body>
+</html>
