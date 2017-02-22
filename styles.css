@@ -20,6 +20,10 @@
 
 .topic-link {
 	text-decoration: none;
+	padding: 15px 20px;
+	display: block;
+	color: #fff;
+	opacity: .5;
 }
 
 .subject-tile:hover {
@@ -28,7 +32,7 @@
 }
 
 .nav-bar {
-	background:#fbfbfb;
+	background: #353948;
 	border-right:1px solid #e5e5e5;
 	position:absolute;
 	top:0;
@@ -37,6 +41,7 @@
 	left:0;
 	width:15%;
 	float: left;
+	overflow: auto;
 }
 
 .nav-list {
@@ -46,75 +51,117 @@
 }
 
 .nav-list>li {
-	height: 25px;
-	padding: 5px;
-	background-color: #a1c0e1;
-	border: 1px solid grey;
-	border-left: 7px solid grey;
 }
 
 .subject-container {
-	border: 2px solid black;
 	width: 85%;
-	top: 15px;
-	right: 0px;
-	bottom: 15px;
-	color: #C63D0F;
-	float: right;
+	position: absolute;
+	left: 15%;
+	height: 100%;
+	overflow: auto;
 }
 
 .code-snippet {
 	width: 100%;
-	padding: 10px;
+	padding: 40px;
 }
 
 .code-box {
-	width: 45%;
+	width: calc(50% - 40px);
 	float: left;
-	color: black;
-	padding: 5px;
-	margin: 5px;
-	border: 4px solid purple;
+	color: white;
+	padding: 20px 30px;
+	background: #353948;
+	margin: 0 20px;
 }
 
 .response-box {
-	width: 45%;
+	background: #42a477;
+	width: calc(50% - 40px);
 	float: left;
-	color: green;
-	padding: 5px;
-	margin: 5px;
-	border: 4px solid purple;
+	padding: 20px 30px;
+	color: #fff;
+	margin: 0 20px;
+	line-height: 170%;
 }
 
 .title {
-	background-color: #eee;
-	text-align: right;
-	padding: 10px;
+	padding: 15px 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
 }
 
 .notes {
-	width: 90%;
-	background-color: #eee;
-	text-align: left;
-	padding: 10px;
-	border: 1px solid purple;
-	float: left;
-	margin: 15px;
+	padding: 30px 50px;
+	margin: 0px 60px;
+	background: #eee;
+	position: relative;
 }
 
 .heading {
-	background-color: #eef;
 	text-align: left;
-	color: black;
-	margin: 15px;
-	float: left;
-	width: 85%;
+	padding: 15px 20px;
+	border-bottom: 1px solid #eee;
 }
 
 .sub-heading {
 	text-align: left;
 	color: black;
 	margin: 15px;
-	float: left;
 	width: 85%;
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+    color: #555;
+}
+
+.topic-link.active {
+    opacity: 1;
+}
+
+.topic-link:hover {
+    opacity: 1;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all .3s;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.section {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.16);
+    margin: 50px 100px;
+    padding-bottom: 60px;
+    border-radius: 10px;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
+.heading h1 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.notes:before {
+    content: "*";
+    font-size: 80px;
+    opacity: .2;
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.highlight {
+	font-weight: bold;
 }

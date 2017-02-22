@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<div>
+			<div class="nav-bar">
+				<ul class="nav-list">
+					<li>
+						<a href="let_const.html" class="topic-link active"> Let, Const</a>
+					</li>
+					<li>
+						<a href="arrow_functions.html" class="topic-link"> Arrow Functions</a>
+					</li>
+					<li>
+						<a href="classes.html" class="topic-link"> Classes and Literals</a>
+					</li>
+					<li>
+						<a href="modules.html" class="topic-link"> Modules</a>
+					</li>
+					<li>
+						<a href="destructuring.html" class="topic-link"> Destructuring</a>
+					</li>
+					<li>
+						<a href="template_strings.html" class="topic-link"> Template Strings</a>
+					</li>
+					<li>
+						<a href="rest_parameters.html" class="topic-link"> Rest Parameters</a>
+					</li>
+					<li>
+						<a href="maps.html" class="topic-link"> Maps</a>
+					</li>
+					<li>
+						<a href="sets.html" class="topic-link"> Sets</a>
+					</li>
+					<li>
+						<a href="tooling.html" class="topic-link"> Tooling</a>
+					</li>
+					<li>
+						<a href="proxies.html" class="topic-link"> Proxies</a>
+					</li>
+					<li>
+						<a href="generator.html" class="topic-link"> Generator</a>
+					</li>
+					<li>
+						<a href="utility.html" class="topic-link"> Utility</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subject-container">
+				<div class="title">
+					<h1>Arrow Functions</h1>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>Intro</h1>
+					</div>
+					<div class="notes">
+						<p>In ES6, the common way of describing a function would become something like </p>
+						<p></p>
+						<p>[1, 2, 3, 4].map(num => {</p>
+						<p>var multiplier = 2 + num</p>
+						<p>return num * multiplier</p>
+						<p>})</p>
+						<p></p>
+						<p>It looks very similar to a normal function declaration, excpet for the "=>", and that precisely is the topic of the chapter, the Arrow Function</p>
+						<p></p>
+						<p>The changes can be pointed as,</p>
+						<p></p>
+						<p class="highlight">There is no longer any need to specify the "function" keyword.</p>
+						<p class="highlight">The function is bound to its lexical scope.</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>LEXICAL SCOPE (BLOCK SCOPE)</h1>
+					</div>
+					<div class="notes">
+						<p>The scope of anything is said to be lexical if its scope is limited to the enclosing { and }, that is its enclosing box</p>
+						<p></p>
+						<p>(In javascript, a variable declared anywhere is hoisted and the scope of the variable becomes to that of the enclosing class/function)</p>
+						<p></p>
+						<p>What this means that all the tricks like </p>
+						<p class="highlight">var self = this</p>
+						<p class="highlight">var that = this</p>
+						<p class="highlight">.bind(this)</p>
+						<p>are no longer necessary when using arrow functions.</p>
+						<p></p>
+						<p>   ... unless you want to use the scope set during events. In such cases you have to use the "function" syntax.</p>
+					</div>
+					<div class="sub-heading">
+						<h2>ONE LINE STATEMENTS</h2>
+					</div>
+					<div class="notes">
+						<p>The arrow function is particularly useful when writing small functions like</p>
+						<p></p>
+						<p>[1, 2, 3].map(function (num) { return num * 2 })</p>
+						<p></p>
+						<p>[1, 2, 3].map(num => num * 2)</p>
+						<p></p>
+						<p>[1, 2, 3, 4].map((num, index) => num * 2 + index)</p>
+						<p></p>
+						<p>The first example, being a larger function is better off written in the previous syntax. (as you also get to name the function which is better in most of the cases)</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+			</div>
+		</div>
+	</body>
+</html>

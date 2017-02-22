@@ -49,69 +49,72 @@
 			</div>
 			<div class="subject-container">
 				<div class="title">
-					<h1>Let Const</h1>
+					<h1>Spread and Rest Operators</h1>
 				</div>
 				<!--  ############################################################## -->
 				<div class="section">
 					<div class="heading">
-						<h1>PROBLEM WITH VAR</h1>
+						<h1>Rest</h1>
+					</div>
+					<div class="notes">
+						<p>Rest operation is used to get all the given arguments into one array structure</p>
 					</div>
 					<div class="code-snippet clearfix">
 						<div class="code-box">
-							<p><span>function areTheyAwesome (name) {</span></p>
-							<p><span>&nbsp; &nbsp;if (name === 'nico') {</span></p>
-							<p><span>&nbsp; &nbsp; &nbsp; &nbsp;var awesome = true</span></p>
-							<p><span>&nbsp; &nbsp;} </span></p>
-							<p><span>&nbsp; return awesome </span></p>
-							<p><span>}</span></p>
+							<p>function concat (...words) {</p>
+							<p>  return words.join(' ')</p>
+							<p>}</p>
+							<p>var result = concat('this', 'is', 'okay')</p>
+							<p>console.log(result)</p>
+							<p></p>
+							<p>function sum (multiplier, base, ...numbers) {</p>
+							<p>  var sum = numbers.reduce((accumulator, num) => accumulator + num, base)</p>
+							<p>  return multiplier * sum</p>
+							<p>}</p>
+							<p>var total = sum(2, 6, 10, 8, 9)</p>
+							<p>console.log(total)</p>
 						</div>
 						<div class="response-box">
-							<p>areTheyAwesome('nico')<br /> // &lt;- true<br /> areTheyAwesome('christian heilmann')<br /> // &lt;- undefined</p>
-							<p>&nbsp;</p>
+							<p>// <- 'this is okay'</p>
+							<p>// <- 66</p>
 						</div>
-					</div>
-					<div class="notes">
-						<p>function areTheyAwesome (name) {</p>
-						<p>&nbsp; var awesome </p>
-						<p>if (name === 'nico') {</p>
-						<p>&nbsp; &nbsp; awesome = true</p>
-						<p>&nbsp; }</p>
-						<p>&nbsp; return awesome</p>
-						<p>}</p>
 					</div>
 				</div>
 				<!--  ############################################################## -->
 				<div class="section">
 					<div class="heading">
-						<h1>LEXICAL SCOPE - THE SOLUTION</h1>
-					</div>
-					<div class="sub-heading">
-						<h2>LET</h2>
+						<h1>Spread</h1>
 					</div>
 					<div class="notes">
-						<p>let outer = 'I am so eccentric!'</p>
-						<p>{</p>
-						<p>&nbsp; let inner = 'I play with neighbors in my block and the sewers'</p>
-						<p>&nbsp; {</p>
-						<p>&nbsp; &nbsp; let innermost = 'I only play with neighbors in my block'</p>
-						<p>&nbsp; }</p>
-						<p>&nbsp; // accessing innermost here would throw</p>
-						<p>}</p>
-						<p>// accessing inner here would throw</p>
-						<p>// accessing innermost here would throw</p>
+						<p>Spread operation allows us to spread all the elements of an array into a list of elements</p>
 					</div>
-					<div class="sub-heading">
-						<h2>CONST</h2>
-					</div>
-					<div class="notes">
-						<ul>
-							<li>const is also block-scoped</li>
-							<li>const variables must be declared using an initializer</li>
-							<li>const variables can only be assigned to once, in said initializer</li>
-							<li>const variables don’t make the assigned value immutable.</li>
-							<li>Assigning to const will fail silently</li>
-							<li>Redeclaration of a variable by the same name will throw</li>
-						</ul>
+					<div class="code-snippet clearfix">
+						<div class="code-box">
+							<p>console.log(...[1, 2, 3])</p>
+							<p></p>
+							<p>Math.max(1,2,3)</p>
+							<p>a = [1,2,3]</p>
+							<p>Math.max(...a)</p>
+							<p></p>
+							<p class="highlight">it can be used on anything that’s an iterable.</p>
+							<p>[...document.querySelectorAll('div')]</p>
+							<p></p>
+							<p>console.log(1, ...[2, 3, 4], 5)</p>
+							<p></p>
+							<p class="highlight">Concatenation</p>
+							<p>[1, 2].concat(more)</p>
+							<p>[1, 2, ...more]</p>
+							<p></p>
+							<p class="highlight">Push onto list</p>
+							<p>list.push.apply(list, [3, 4])</p>
+							<p>list.push(...[3, 4])</p>
+						</div>
+						<div class="response-box">
+							<p>// <- '1 2 3'</p>
+							<p>//3</p>
+							<p>//3</p>
+							<p>// <- '1 2 3 4 5'</p>
+						</div>
 					</div>
 				</div>
 				<!--  ############################################################## -->

@@ -1,0 +1,149 @@
+<html><head>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body contenteditable="true">
+		<div>
+			<div class="nav-bar">
+				<ul class="nav-list">
+					<li>
+						<a href="let_const.html" class="topic-link active"> Let, Const</a>
+					</li>
+					<li>
+						<a href="arrow_functions.html" class="topic-link"> Arrow Functions</a>
+					</li>
+					<li>
+						<a href="classes.html" class="topic-link"> Classes and Literals</a>
+					</li>
+					<li>
+						<a href="modules.html" class="topic-link"> Modules</a>
+					</li>
+					<li>
+						<a href="destructuring.html" class="topic-link"> Destructuring</a>
+					</li>
+					<li>
+						<a href="template_strings.html" class="topic-link"> Template Strings</a>
+					</li>
+					<li>
+						<a href="rest_parameters.html" class="topic-link"> Rest Parameters</a>
+					</li>
+					<li>
+						<a href="maps.html" class="topic-link"> Maps</a>
+					</li>
+					<li>
+						<a href="sets.html" class="topic-link"> Sets</a>
+					</li>
+					<li>
+						<a href="tooling.html" class="topic-link"> Tooling</a>
+					</li>
+					<li>
+						<a href="proxies.html" class="topic-link"> Proxies</a>
+					</li>
+					<li>
+						<a href="generator.html" class="topic-link"> Generator</a>
+					</li>
+					<li>
+						<a href="utility.html" class="topic-link"> Utility</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subject-container">
+				<div class="title">
+					<h1>Classes</h1>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="sub-heading">
+						<h2>Intro</h2>
+					</div>
+					<div class="notes">
+						<p>It is not something new. Actually this comes under the syntactic sugar section rather than a new feature.</p><p></p>
+						<p>JavaScript is a still a prototype-based language. There is no huge restructuring of the language, </p>they just made it easier for people used to classes to leverage prototypal inheritance.
+						<p></p>
+						<p class="highlight">Prototype vs Class..?</p>
+					</div>
+					<div class="sub-heading">
+						<h2>Prototype Structure</h2>
+					</div>
+					<div class="notes">
+						
+						<p></p>
+						<p>function Car () {</p>
+						<p>  this.fuel = 0;</p>
+						<p>  this.distance = 0;</p>
+						<p>}</p>
+						<p></p>
+						<p>Car.prototype.move = function () {</p>
+						<p>  if (this.fuel &lt; 1) {</p>
+						<p>    throw new RangeError('Fuel tank is depleted')</p>
+						<p>  }</p>
+						<p>  this.fuel--</p>
+						<p>  this.distance += 2</p>
+						<p>}</p>
+						<p></p>
+						<p>Car.prototype.addFuel = function () {</p>
+						<p>  if (this.fuel &gt;= 60) {</p>
+						<p>    throw new RangeError('Fuel tank is full')</p>
+						<p>  }</p>
+						<p>  this.fuel++</p>
+						<p>}</p>
+						<p></p>
+						<p>var car = new Car()</p>
+						<p>car.addFuel()</p>
+						<p>car.move()</p>
+						<p></p>
+						<p>car.move()</p>
+						<p></p>
+					</div>
+					<div class="sub-heading">
+						<h2>Classes Structure</h2>
+					</div>
+					<div class="notes">
+						<p>class Car {</p>
+						<p>  constructor () {</p>
+						<p>    this.fuel = 0</p>
+						<p>    this.distance = 0</p>
+						<p>  }</p>
+						<p>  move () {</p>
+						<p>    if (this.fuel &lt; 1) {</p>
+						<p>      throw new RangeError('Fuel tank is depleted')</p>
+						<p>    }</p>
+						<p>    this.fuel--</p>
+						<p>    this.distance += 2</p>
+						<p>  }</p>
+						<p>  addFuel () {</p>
+						<p>    if (this.fuel &gt;= 60) {</p>
+						<p>      throw new RangeError('Fuel tank is full')</p>
+						<p>    }</p>
+						<p>    this.fuel++</p>
+						<p>  }</p>
+						<p>}</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="sub-heading">
+						<h2>Extends Structure</h2>
+					</div>
+					<div class="notes">
+						<p>class Car {</p>
+						<p>&nbsp; constructor () {</p>
+						<p>&nbsp; &nbsp; this.topSpeed = Math.random()</p>
+						<p>&nbsp; }</p>
+						<p>&nbsp; static isFaster (left, right) {</p>
+						<p>&nbsp; &nbsp; return left.topSpeed &gt; right.topSpeed</p>
+						<p>&nbsp; }</p>
+						<p>}</p>
+						<p></p>
+						<p>Inheritance (extends)</p>
+						<p>&nbsp; class Tesla extends Car {</p>
+						<p>&nbsp; &nbsp; move () {</p>
+						<p>&nbsp; &nbsp; &nbsp;super.move()</p>
+						<p>&nbsp; &nbsp; &nbsp;this.distance += 4</p>
+						<p>&nbsp; }</p>
+						<p>}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</body></html>

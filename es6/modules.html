@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<div>
+			<div class="nav-bar">
+				<ul class="nav-list">
+					<li>
+						<a href="let_const.html" class="topic-link active"> Let, Const</a>
+					</li>
+					<li>
+						<a href="arrow_functions.html" class="topic-link"> Arrow Functions</a>
+					</li>
+					<li>
+						<a href="classes.html" class="topic-link"> Classes and Literals</a>
+					</li>
+					<li>
+						<a href="modules.html" class="topic-link"> Modules</a>
+					</li>
+					<li>
+						<a href="destructuring.html" class="topic-link"> Destructuring</a>
+					</li>
+					<li>
+						<a href="template_strings.html" class="topic-link"> Template Strings</a>
+					</li>
+					<li>
+						<a href="rest_parameters.html" class="topic-link"> Rest Parameters</a>
+					</li>
+					<li>
+						<a href="maps.html" class="topic-link"> Maps</a>
+					</li>
+					<li>
+						<a href="sets.html" class="topic-link"> Sets</a>
+					</li>
+					<li>
+						<a href="tooling.html" class="topic-link"> Tooling</a>
+					</li>
+					<li>
+						<a href="proxies.html" class="topic-link"> Proxies</a>
+					</li>
+					<li>
+						<a href="generator.html" class="topic-link"> Generator</a>
+					</li>
+					<li>
+						<a href="utility.html" class="topic-link"> Utility</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subject-container">
+				<div class="title">
+					<h1>Modules</h1>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>Intorduction</h1>
+					</div>
+					<div class="notes">
+						<p>To obtain modules in JavaScript we have used systems like RequireJS, CommonJS etc. But now with ES6 we have a built in module system.</p>
+						<p></p>
+						<p></p>
+						<p>Strict Mode</p>
+						<p>In the ES6 module system, strict mode is turned on by default. It’s just a stricter version of the language that disallows lots of bad parts of the language.</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>Exports</h1>
+					</div>
+					<div class="sub-heading">
+						<h2>Default Export</h2>
+					</div>
+					<div class="notes">
+						<p>export default 1</p>
+						<p>export default NaN</p>
+						<p>export default 'foo'</p>
+						<p>export default { foo: 'bar' }</p>
+						<p>export default ['foo', 'bar']</p>
+						<p>export default function foo () {}</p>
+						<p></p>
+						<p>export statements can only be placed at the top level in ES6 modules – even if the method they’re in </p>would be immediately invoked when loading the module.
+						<p></p>
+						<p>function foo () {</p>
+						<p>export default 'bar' // SyntaxError</p>
+						<p>}</p>
+						<p>foo()</p>
+					</div>
+					<div class="sub-heading">
+						<h2>Named Exports</h2>
+					</div>
+					<div class="notes">
+						<p>export var foo = 'bar'</p>
+						<p>export var baz = 'ponyfoo'</p>
+					</div>
+					<div class="sub-heading">
+						<h2>Bindings, Not Values</h2>
+					</div>
+					<div class="notes">
+						<p>// foo.js</p>
+						<p>let a = {a: 1};</p>
+						<p>function mutateA() {</p>
+						<p>a = {b: 2};</p>
+						<p>}</p>
+						<p>export a;</p>
+						<p>export mutateA;</p>
+						<p></p>
+						<p></p>
+						<p>// bar.js</p>
+						<p>import {a, mutateA} from foo;</p>
+						<p></p>
+						<p>console.log(a); // {a: 1}</p>
+						<p>mutateA();</p>
+						<p>console.log(a); // {b: 2}</p>
+					</div>
+					<div class="sub-heading">
+						<h2>Exporting Lists</h2>
+					</div>
+					<div class="notes">
+						<p>var foo = 'ponyfoo'</p>
+						<p>var bar = 'baz'</p>
+						<p>export { foo, bar }</p>
+						<p></p>
+						<p>If you’d like to export something with a different name, you can use the export { foo as bar }</p>
+						<p></p>
+						<p>export { foo as default, bar }</p>
+					</div>
+				</div>
+				<div class="section">
+					<div class="heading">
+						<h1>Imports</h1>
+					</div>
+					<div class="sub-heading">
+						<h2>Import Default Exports</h2>
+					</div>
+					<div class="notes">
+						<p>import 'lodash'</p>
+						<p>import _ from 'lodash'</p>
+					</div>
+					<div class="sub-heading">
+						<h2>Import Named Exports</h2>
+					</div>
+					<div class="notes">
+						<p>import {map, reduce} from 'lodash'</p>
+						<p>import {cloneDeep as clone, map} from 'lodash'</p>
+						<p>import {default, map} from 'lodash'</p>
+						<p>import {default as _, map} from 'lodash'</p>
+						<p>import _, {map} from 'lodash'</p>
+					</div>
+					<div class="sub-heading">
+						<h2>Import All</h2>
+					</div>
+					<div class="notes">
+						<p>import * as _ from 'lodash'</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,1 +1,311 @@
-destructuring.html
+<html>
+	<head>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<div>
+			<div class="nav-bar">
+				<ul class="nav-list">
+					<li>
+						<a href="let_const.html" class="topic-link active"> Let, Const</a>
+					</li>
+					<li>
+						<a href="arrow_functions.html" class="topic-link"> Arrow Functions</a>
+					</li>
+					<li>
+						<a href="classes.html" class="topic-link"> Classes and Literals</a>
+					</li>
+					<li>
+						<a href="modules.html" class="topic-link"> Modules</a>
+					</li>
+					<li>
+						<a href="destructuring.html" class="topic-link"> Destructuring</a>
+					</li>
+					<li>
+						<a href="template_strings.html" class="topic-link"> Template Strings</a>
+					</li>
+					<li>
+						<a href="rest_parameters.html" class="topic-link"> Rest Parameters</a>
+					</li>
+					<li>
+						<a href="maps.html" class="topic-link"> Maps</a>
+					</li>
+					<li>
+						<a href="sets.html" class="topic-link"> Sets</a>
+					</li>
+					<li>
+						<a href="tooling.html" class="topic-link"> Tooling</a>
+					</li>
+					<li>
+						<a href="proxies.html" class="topic-link"> Proxies</a>
+					</li>
+					<li>
+						<a href="generator.html" class="topic-link"> Generator</a>
+					</li>
+					<li>
+						<a href="utility.html" class="topic-link"> Utility</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subject-container">
+				<div class="title">
+					<h1>Destructuring</h1>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>Object Destructuring</h1>
+					</div>
+					<div class="notes">
+						Destructuring is the syntax change that helps us do destructuring, as in it allows us to extract multiple values and bind them to multiple variables from Arrays and Objects with very simple syntax.
+					</div>
+					<div class="code-snippet clearfix">
+						<div class="code-box">
+							<p>var foo = { bar: 'pony', baz: 3 }</p>
+							<p>var {bar, baz} = foo</p>
+							<p>console.log(bar)</p>
+
+							<p>console.log(baz)</p>
+						</div>
+						<div class="response-box">
+							<p>// <- 'pony'</p>
+							<p>// <- 3</p>
+						</div>
+					</div>
+
+					<div class="code-snippet clearfix">
+						<div class="code-box">
+							<p>var foo = { bar: 'pony', baz: 3 }</p>
+							<p>var {bar: a, baz: b} = foo</p>
+							<p>console.log(a)</p>
+
+							<p>console.log(b)</p>
+						</div>
+						<div class="response-box">
+							<p>// <- 'pony'</p>
+							<p>// <- 3</p>
+						</div>
+					</div>
+
+					<div class="code-snippet clearfix">
+						<div class="code-box">
+							<p>var foo = { bar: { deep: 'pony', dangerouslySetInnerHTML: 'lol' } }</p>
+							<p>var {bar: { deep, dangerouslySetInnerHTML: sure }} = foo</p>
+							<p>console.log(deep)</p>
+
+							<p>console.log(sure)</p>
+						</div>
+						<div class="response-box">
+							<p>// <- 'pony'</p>
+							<p>// <- 'LOL'</p>
+						</div>
+					</div>
+
+					<div class="code-snippet clearfix">
+						<div class="code-box">
+							<p>var {foo} = {bar: 'baz'}</p>
+							<p>console.log(foo)</p>
+
+							<p>var {foo:{bar}} = {baz: 'ouch'}</p>
+						</div>
+						<div class="response-box">
+							<p>// <- UNDEFINED</p>
+							<p>// <- EXCEPTION</p>
+						</div>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>Array Destructuring</h1>
+					</div>
+					<div class="notes">
+						<p>we can do the same with arrays</p>
+						<p>var [a] = [10]</p>
+						<p>console.log(a)</p>
+						<p></p>
+						<p>// <- 10</p>
+						<p></p>
+						<p>var [,,a,b] = [1,2,3,4,5]</p>
+						<p>console.log(a)</p>
+						<p>// <- 3</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>As Function Arguments</h1>
+					</div>
+					<div class="sub-heading">
+						<h2>As Default Values</h2>
+					</div>
+					<div class="notes">
+						<p>var {foo=3} = { foo: 2 }</p>
+						<p>console.log(foo)</p>
+						<p>// <- 2</p>
+						<p></p>
+						<p>var {foo=3} = { foo: undefined }</p>
+						<p>console.log(foo)</p>
+						<p>// <- 3</p>
+						<p></p>
+						<p>var {foo=3} = { bar: 2 }</p>
+						<p>console.log(foo)</p>
+						<p>// <- 3</p>
+						<p></p>
+					</div>
+					<div class="sub-heading">
+						<h2>As Default Function Arguments</h2>
+					</div>
+					<div class="notes">
+						<p class="highlight">This can be used as function arguments to have default values for the parameters.</p>
+						<p>function greet ({ age, name:greeting='she' }) {</p>
+						<p>console.log(${greeting} is ${age} years old.)</p>
+						<p>}</p>
+						<p>greet({ name: 'nico', age: 27 })</p>
+						<p>// <- 'nico is 27 years old'</p>
+						<p>greet({ age: 24 })</p>
+						<p></p>
+						<p>// <- 'SHE IS 24 YEARS OLD'</p>
+						<p></p>
+					</div>
+					<div class="sub-heading">
+						<h2>Take all arguments</h2>
+					</div>
+					<div class="notes">
+						<p class="highlight">to make a function that takes anything as arguments</p>
+						<p>function random ({}) {</p>
+						<p>return Math.floor(Math.random() * (max - min)) + min</p>
+						<p></p>
+						<p>}</p>
+					</div>
+					<div class="sub-heading">
+						<h2>Next Level</h2>
+					</div>
+					<div class="notes">
+						<p>class GuitarAmp {</p>
+						<p>  constructor ({ cabinet = 'spruce', distortion = '1', volume = '0' } = {}) {</p>
+						<p>    Object.assign(this, {</p>
+						<p>      cabinet, distortion, volume</p>
+						<p>    });</p>
+						<p>  }</p>
+						<p>}</p>
+						<p></p>
+						<p>class BassAmp extends GuitarAmp {</p>
+						<p>  constructor (options = {}) {</p>
+						<p>    super(options);</p>
+						<p>    this.lowCut = options.lowCut;</p>
+						<p>  }</p>
+						<p>}</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>Modules Destructuring</h1>
+					</div>
+					<div class="notes highlight">
+						<p>import {series, concurrent, map } from 'contra'</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>for of loop</h1>
+					</div>
+					<div class="notes">
+						<p class="highlight">for of</p>
+						<p>for (element of array) {</p>
+						<p>	console.log(element);</p>
+						<p>}</p>
+						<p></p>
+						<p>for ([index, element] of array.entries()) {</p>
+						<p>	console.log(`${element} is at ${index}`);</p>
+						<p>} </p>
+						<p></p>
+						<p class="highlight">for in</p>
+						<p>Is meant for object not arrays.</p>
+						<p>When used on arrays, it might loop out of order.</p>
+						<p>The iterator "i" is a string, </p>
+						<p>    so... { "i" + 1 }</p>
+						<p></p>
+						<p class="highlight">forEach</p>
+						<p>cant use return/break/continue easily.</p>
+					</div>
+				</div>
+				<!--  ############################################################## -->
+				<div class="section">
+					<div class="heading">
+						<h1>Object Literals</h1>
+					</div>
+					<div class="sub-heading">
+						<p>Property Value Shorthands</p>
+					</div>
+					<div class="notes">
+						<p class="highlight">Whenever you find yourself assigning a property value that matches a property name, you can omit the </p>property value, it’s implicit in ES6.
+						<p></p>
+						<p>var foo = 'bar'</p>
+						<p>var baz = { foo }</p>
+						<p>console.log(baz.foo)</p>
+						<p>// <- 'bar'</p>
+						<p></p>
+						<p>var foo = 'bar'</p>
+						<p>var baz = { [foo]: 'ponyfoo' }</p>
+						<p>console.log(baz)</p>
+						<p>// <- { bar: 'ponyfoo' }</p>
+						<p></p>
+						<p class="highlight">Limitation:</p>
+						<p></p>
+						<p>var foo = 'bar'</p>
+						<p>var bar = 'ponyfoo'</p>
+						<p>var baz = { [foo] }</p>
+						<p>console.log(baz)</p>
+						<p>// <- SyntaxError</p>
+						<p></p>
+					</div>
+					<div class="sub-heading">
+						<p>Exports</p>
+					</div>
+					<div class="notes">
+						<p class="highlight">Our code base has utility functions which export methods to be used to outside like</p>
+						<p></p>
+						<p>function getItem (key) { return key in ms ? ms[key] : null }</p>
+						<p></p>
+						<p>function setItem (key, value) { ms[key] = value }</p>
+						<p></p>
+						<p>function clear () { ms = {} }</p>
+						<p></p>
+						<p>module.exports = {</p>
+						<p>  getItem: getItem,</p>
+						<p>  setItem: setItem,</p>
+						<p>  clear: clear</p>
+						<p>} </p>
+						<p></p>
+						<p class="highlight">---can be replaced with </p>
+						<p></p>
+						<p>module.exports = { getItem, setItem, clear }</p>
+					</div>
+					<div class="sub-heading">
+						<p>Functions in Objects</p>
+					</div>
+					<div class="notes">
+						<p class="highlight">BEFORE:</p>
+						<p></p>
+						<p>var foo = {</p>
+						<p>  bar: function (baz) {</p>
+						<p>  }</p>
+						<p>}</p>
+						<p></p>
+						<p class="highlight">AFTER:</p>
+						<p></p>
+						<p>var cart = {</p>
+						<p>  wheels: 4,</p>
+						<p>  dismantle () {</p>
+						<p>    this.wheels = 0</p>
+						<p>  }</p>
+						<p>}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
