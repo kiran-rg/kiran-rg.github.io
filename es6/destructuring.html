@@ -1,5 +1,4 @@
-<html>
-	<head>
+<html><head>
 		<link rel="stylesheet" href="../styles.css">
 	</head>
 	<body>
@@ -68,8 +67,8 @@
 							<p>console.log(baz)</p>
 						</div>
 						<div class="response-box">
-							<p>// <- 'pony'</p>
-							<p>// <- 3</p>
+							<p>// &lt;- 'pony'</p>
+							<p>// &lt;- 3</p>
 						</div>
 					</div>
 
@@ -82,8 +81,8 @@
 							<p>console.log(b)</p>
 						</div>
 						<div class="response-box">
-							<p>// <- 'pony'</p>
-							<p>// <- 3</p>
+							<p>// &lt;- 'pony'</p>
+							<p>// &lt;- 3</p>
 						</div>
 					</div>
 
@@ -96,8 +95,8 @@
 							<p>console.log(sure)</p>
 						</div>
 						<div class="response-box">
-							<p>// <- 'pony'</p>
-							<p>// <- 'LOL'</p>
+							<p>// &lt;- 'pony'</p>
+							<p>// &lt;- 'LOL'</p>
 						</div>
 					</div>
 
@@ -109,8 +108,8 @@
 							<p>var {foo:{bar}} = {baz: 'ouch'}</p>
 						</div>
 						<div class="response-box">
-							<p>// <- UNDEFINED</p>
-							<p>// <- EXCEPTION</p>
+							<p>// &lt;- UNDEFINED</p>
+							<p>// &lt;- EXCEPTION</p>
 						</div>
 					</div>
 				</div>
@@ -124,11 +123,11 @@
 						<p>var [a] = [10]</p>
 						<p>console.log(a)</p>
 						<p></p>
-						<p>// <- 10</p>
+						<p>// &lt;- 10</p>
 						<p></p>
 						<p>var [,,a,b] = [1,2,3,4,5]</p>
 						<p>console.log(a)</p>
-						<p>// <- 3</p>
+						<p>// &lt;- 3</p>
 					</div>
 				</div>
 				<!--  ############################################################## -->
@@ -142,15 +141,15 @@
 					<div class="notes">
 						<p>var {foo=3} = { foo: 2 }</p>
 						<p>console.log(foo)</p>
-						<p>// <- 2</p>
+						<p>// &lt;- 2</p>
 						<p></p>
 						<p>var {foo=3} = { foo: undefined }</p>
 						<p>console.log(foo)</p>
-						<p>// <- 3</p>
+						<p>// &lt;- 3</p>
 						<p></p>
 						<p>var {foo=3} = { bar: 2 }</p>
 						<p>console.log(foo)</p>
-						<p>// <- 3</p>
+						<p>// &lt;- 3</p>
 						<p></p>
 					</div>
 					<div class="sub-heading">
@@ -159,13 +158,13 @@
 					<div class="notes">
 						<p class="highlight">This can be used as function arguments to have default values for the parameters.</p>
 						<p>function greet ({ age, name:greeting='she' }) {</p>
-						<p>console.log(${greeting} is ${age} years old.)</p>
+						<p>&nbsp; console.log(${greeting} is ${age} years old.)</p>
 						<p>}</p>
 						<p>greet({ name: 'nico', age: 27 })</p>
-						<p>// <- 'nico is 27 years old'</p>
+						<p>// &lt;- 'nico is 27 years old'</p>
 						<p>greet({ age: 24 })</p>
 						<p></p>
-						<p>// <- 'SHE IS 24 YEARS OLD'</p>
+						<p>// &lt;- 'SHE IS 24 YEARS OLD'</p>
 						<p></p>
 					</div>
 					<div class="sub-heading">
@@ -174,7 +173,7 @@
 					<div class="notes">
 						<p class="highlight">to make a function that takes anything as arguments</p>
 						<p>function random ({}) {</p>
-						<p>return Math.floor(Math.random() * (max - min)) + min</p>
+						<p>&nbsp; return Math.floor(Math.random() * (max - min)) + min</p>
 						<p></p>
 						<p>}</p>
 					</div>
@@ -184,17 +183,17 @@
 					<div class="notes">
 						<p>class GuitarAmp {</p>
 						<p>  constructor ({ cabinet = 'spruce', distortion = '1', volume = '0' } = {}) {</p>
-						<p>    Object.assign(this, {</p>
-						<p>      cabinet, distortion, volume</p>
-						<p>    });</p>
+						<p>&nbsp; Object.assign(this, {</p>
+						<p>&nbsp; &nbsp; &nbsp;cabinet, distortion, volume</p>
+						<p>&nbsp; });</p>
 						<p>  }</p>
 						<p>}</p>
 						<p></p>
 						<p>class BassAmp extends GuitarAmp {</p>
-						<p>  constructor (options = {}) {</p>
-						<p>    super(options);</p>
-						<p>    this.lowCut = options.lowCut;</p>
-						<p>  }</p>
+						<p>&nbsp; constructor (options = {}) {</p>
+						<p>&nbsp; &nbsp; super(options);</p>
+						<p>&nbsp; &nbsp; this.lowCut = options.lowCut;</p>
+						<p>&nbsp; }</p>
 						<p>}</p>
 					</div>
 				</div>
@@ -215,11 +214,11 @@
 					<div class="notes">
 						<p class="highlight">for of</p>
 						<p>for (element of array) {</p>
-						<p>	console.log(element);</p>
+						<p>&nbsp; console.log(element);</p>
 						<p>}</p>
 						<p></p>
 						<p>for ([index, element] of array.entries()) {</p>
-						<p>	console.log(`${element} is at ${index}`);</p>
+						<p>&nbsp; console.log(`${element} is at ${index}`);</p>
 						<p>} </p>
 						<p></p>
 						<p class="highlight">for in</p>
@@ -229,7 +228,7 @@
 						<p>    so... { "i" + 1 }</p>
 						<p></p>
 						<p class="highlight">forEach</p>
-						<p>cant use return/break/continue easily.</p>
+						<p>Cant use return/break/continue easily.</p>
 					</div>
 				</div>
 				<!--  ############################################################## -->
@@ -241,17 +240,16 @@
 						<p>Property Value Shorthands</p>
 					</div>
 					<div class="notes">
-						<p class="highlight">Whenever you find yourself assigning a property value that matches a property name, you can omit the </p>property value, it’s implicit in ES6.
-						<p></p>
+						<p class="highlight">Whenever you find yourself assigning a property value that matches a property name, you can omit the property value, as it is implicit in ES6.</p><p></p>
 						<p>var foo = 'bar'</p>
 						<p>var baz = { foo }</p>
 						<p>console.log(baz.foo)</p>
-						<p>// <- 'bar'</p>
+						<p>// &lt;- 'bar'</p>
 						<p></p>
 						<p>var foo = 'bar'</p>
 						<p>var baz = { [foo]: 'ponyfoo' }</p>
 						<p>console.log(baz)</p>
-						<p>// <- { bar: 'ponyfoo' }</p>
+						<p>// &lt;- { bar: 'ponyfoo' }</p>
 						<p></p>
 						<p class="highlight">Limitation:</p>
 						<p></p>
@@ -259,7 +257,7 @@
 						<p>var bar = 'ponyfoo'</p>
 						<p>var baz = { [foo] }</p>
 						<p>console.log(baz)</p>
-						<p>// <- SyntaxError</p>
+						<p>// &lt;- SyntaxError</p>
 						<p></p>
 					</div>
 					<div class="sub-heading">
@@ -275,9 +273,9 @@
 						<p>function clear () { ms = {} }</p>
 						<p></p>
 						<p>module.exports = {</p>
-						<p>  getItem: getItem,</p>
-						<p>  setItem: setItem,</p>
-						<p>  clear: clear</p>
+						<p>&nbsp; getItem: getItem,</p>
+						<p>&nbsp; setItem: setItem,</p>
+						<p>&nbsp; clear: clear</p>
 						<p>} </p>
 						<p></p>
 						<p class="highlight">---can be replaced with </p>
@@ -291,21 +289,20 @@
 						<p class="highlight">BEFORE:</p>
 						<p></p>
 						<p>var foo = {</p>
-						<p>  bar: function (baz) {</p>
-						<p>  }</p>
+						<p>&nbsp; bar: function (baz) {}</p>
 						<p>}</p>
 						<p></p>
 						<p class="highlight">AFTER:</p>
 						<p></p>
 						<p>var cart = {</p>
-						<p>  wheels: 4,</p>
-						<p>  dismantle () {</p>
-						<p>    this.wheels = 0</p>
-						<p>  }</p>
+						<p>&nbsp; wheels: 4,</p>
+						<p>&nbsp; dismantle () {</p>
+						<p>&nbsp; &nbsp; this.wheels = 0</p>
+						<p>&nbsp; }</p>
 						<p>}</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
+	
+</body></html>

@@ -125,22 +125,17 @@
 						<h2>Extends Structure</h2>
 					</div>
 					<div class="notes">
-						<p>class Car {</p>
-						<p>&nbsp; constructor () {</p>
-						<p>&nbsp; &nbsp; this.topSpeed = Math.random()</p>
-						<p>&nbsp; }</p>
-						<p>&nbsp; static isFaster (left, right) {</p>
-						<p>&nbsp; &nbsp; return left.topSpeed &gt; right.topSpeed</p>
-						<p>&nbsp; }</p>
-						<p>}</p>
-						<p></p>
-						<p>Inheritance (extends)</p>
 						<p>&nbsp; class Tesla extends Car {</p>
 						<p>&nbsp; &nbsp; move () {</p>
 						<p>&nbsp; &nbsp; &nbsp;super.move()</p>
 						<p>&nbsp; &nbsp; &nbsp;this.distance += 4</p>
 						<p>&nbsp; }</p>
 						<p>}</p>
+						<p>var car = new Tesla()</p>
+						<p>car.addFuel()</p>
+						<p>car.move()</p>
+						<p>console.log(car.distance)</p>
+						<p>// <- 6</p>
 					</div>
 				</div>
 			</div>
